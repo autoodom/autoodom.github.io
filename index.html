@@ -8,15 +8,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>AutoOdom: Learning Auto-regressive Proprioceptive Odometry for Legged Locomotion</title>
 
-  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
-        rel="stylesheet">
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']]
+      }
+    };
+  </script>
+  <script type="text/javascript" id="MathJax-script" async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+  </script>
 
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
   <link rel="stylesheet" href="./static/css/bulma.min.css">
   <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
   <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
   <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
-  <link rel="stylesheet"
-        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   <link rel="stylesheet" href="./static/css/index.css">
   <link rel="icon" href="./static/images/image.png">
 
@@ -74,7 +82,6 @@
 
           <div class="column has-text-centered">
             <div class="publication-links">
-              <!-- PDF Link. -->
               <span class="link-block">
                 <a href="https://arxiv.org/pdf/2511.18857"
                    class="external-link button is-normal is-rounded is-dark">
@@ -93,28 +100,7 @@
                   <span>arXiv</span>
                 </a>
               </span>
-              <!-- Video Link. -->
-              <!-- <span class="link-block">
-                <a href="#"
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <i class="fab fa-youtube"></i>
-                  </span>
-                  <span>Video</span>
-                </a>
-              </span> -->
-              <!-- Code Link. -->
-              <!-- <span class="link-block">
-                <a href="#"
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <i class="fab fa-github"></i>
-                  </span>
-                  <span>Code</span>
-                  </a>
-              </span> -->
             </div>
-
           </div>
         </div>
       </div>
@@ -122,51 +108,27 @@
   </div>
 </section>
 
-<section class="hero teaser">
-  <div class="container is-max-desktop">
-    <div class="hero-body">
-      <!-- 
-        TODO: INSERT TEASER IMAGE OR VIDEO HERE 
-        Example: <img src="./static/images/teaser.png" alt="Teaser" height="100%">
-      -->
-      
-      <h2 class="subtitle has-text-centered">
-        AutoOdom is a novel autoregressive proprioceptive odometry system for legged robots.
-      </h2>
-    </div>
-  </div>
-</section>
-
-
 <section class="section">
   <div class="container is-max-desktop">
-    <!-- Abstract. -->
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            Accurate proprioceptive odometry is fundamental for legged robot navigation in GPS-denied and visually degraded environments where conventional visual odometry systems fail. Current approaches face critical limitations: analytical filtering methods suffer from modeling uncertainties and cumulative drift, hybrid learning-filtering approaches remain constrained by their analytical components, while pure learning-based methods struggle with simulation-to-reality transfer and demand extensive real-world data collection.
+            Accurate proprioceptive odometry is fundamental for legged robot navigation in GPS-denied and visually degraded environments where conventional visual odometry systems fail. Current approaches face critical limitations: analytical filtering methods suffer from modeling uncertainties and cumulative drift, hybrid learning-filtering approaches remain constrained by their analytical components, while pure learning-based methods struggle with simulation-to-reality transfer and demand extensive real-world data collection. 
           </p>
           <p>
-            This paper introduces AutoOdom, a novel autoregressive proprioceptive odometry system that overcomes these challenges through an innovative two-stage training paradigm. Stage 1 employs large-scale simulation data to learn complex nonlinear dynamics and rapidly changing contact states inherent in legged locomotion, while Stage 2 introduces an autoregressive enhancement mechanism using limited real-world data to effectively bridge the sim-to-real gap.
+            This paper introduces AutoOdom, a novel autoregressive proprioceptive odometry system that overcomes these challenges through an innovative two-stage training paradigm. Stage 1 employs large-scale simulation data to learn complex nonlinear dynamics and rapidly changing contact states inherent in legged locomotion, while Stage 2 introduces an autoregressive enhancement mechanism using limited real-world data to effectively bridge the sim-to-real gap. 
           </p>
           <p>
-            The key innovation lies in our autoregressive training approach, where the model learns from its own predictions to develop resilience against sensor noise and improve robustness in highly dynamic environments. Comprehensive experimental validation on the Booster T1 humanoid robot demonstrates that AutoOdom significantly outperforms state-of-the-art methods across all evaluation metrics, achieving 57.2% improvement in absolute trajectory error, 59.2% improvement in Umeyama-aligned error, and 36.2% improvement in relative pose error compared to the Legolas baseline. Extensive ablation studies provide critical insights into sensor modality selection and temporal modeling, revealing counterintuitive findings about IMU acceleration data and validating our systematic design choices for robust proprioceptive odometry in challenging locomotion scenarios.
+            The key innovation lies in our autoregressive training approach, where the model learns from its own predictions to develop resilience against sensor noise and improve robustness in highly dynamic environments. Comprehensive experimental validation on the Booster T1 humanoid robot demonstrates that AutoOdom significantly outperforms state-of-the-art methods across all evaluation metrics, achieving 57.2% improvement in absolute trajectory error, 59.2% improvement in Umeyama-aligned error, and 36.2% improvement in relative pose error compared to the Legolas baseline. 
           </p>
         </div>
       </div>
     </div>
-    <!--/ Abstract. -->
-
-    <!-- Overview / Method. -->
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
         <h2 class="title is-3">Overview</h2>
-        <!-- 
-          TODO: INSERT OVERVIEW IMAGE HERE 
-          Example: <img src="./static/images/Overview.png" alt="Overview" width="100%">
-        -->
         <img src="./static/images/Overview.png" alt="Overview" width="100%">
         <div class="content has-text-justified">
           <p>
@@ -175,24 +137,62 @@
         </div>
       </div>
     </div>
-    <!--/ Overview. -->
   </div>
 </section>
 
 
 <section class="section">
   <div class="container is-max-desktop">
-
     <div class="columns is-centered">
       <div class="column is-full-width">
         <h2 class="title is-3">Results</h2>
         <div class="content has-text-justified">
           <p>
-            Comprehensive experimental validation on the Booster T1 humanoid robot demonstrates that AutoOdom significantly outperforms state-of-the-art methods.
+            Comprehensive experimental validation on the Booster T1 humanoid robot demonstrates that AutoOdom significantly outperforms state-of-the-art methods. As shown in our quantitative analysis, the full two-stage AutoOdom system achieves a 57.2% improvement in $ATE_o$ and a 59.2% improvement in $ATE_u$ compared to the Legolas baseline. 
           </p>
         </div>
+
+        <div class="container">
+          <h3 class="title is-4 has-text-centered">Performance Comparison</h3>
+          <table class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth">
+            <thead>
+              <tr>
+                <th>Method</th>
+                <th>$ATE_o$</th>
+                <th>$ATE_u$</th>
+                <th>RPE</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>AutoOdom, Only Stage 1</td>
+                <td>0.8176</td>
+                <td>0.2165</td>
+                <td>0.0124</td>
+              </tr>
+              <tr>
+                <td>AutoOdom, Only Stage 2</td>
+                <td>0.8016</td>
+                <td>0.3328</td>
+                <td>0.0185</td>
+              </tr>
+              <tr style="font-weight: bold; background-color: #f5f5f5;">
+                <td>AutoOdom (Proposed)</td>
+                <td>0.5630</td>
+                <td>0.2153</td>
+                <td>0.0148</td>
+              </tr>
+              <tr>
+                <td>Legolas (Baseline)</td>
+                <td>1.3153</td>
+                <td>0.5281</td>
+                <td>0.0232</td>
+              </tr>
+            </tbody>
+          </table>
+          <p class="is-size-7">Performance comparison of different odometry methods on our test dataset.</p>
+        </div>
         
-        <!-- Main Results: Highlighted comparisons -->
         <div class="columns is-centered" style="margin-top: 2em;">
           <div class="column is-10">
             <h3 class="title is-4 has-text-centered">Trajectory Comparison</h3>
@@ -204,48 +204,80 @@
                 <img src="./static/results/comparison_plot_6.png" alt="Comparison Plot 6" width="100%">
               </div>
             </div>
-          </div>
-        </div>
-
-        <!-- Additional Results: Smaller grid -->
-        <div class="columns is-centered" style="margin-top: 2em;">
-          <div class="column is-10">
-            <h3 class="title is-5 has-text-centered">Detailed Comparisons</h3>
-            <div class="columns is-multiline">
-              <div class="column is-one-quarter">
-                <img src="./static/results/comparison_0_0.02s_acc_actions.png" alt="Comparison 0" width="100%">
-              </div>
-              <div class="column is-one-quarter">
-                <img src="./static/results/comparison_1_0.02s_acc_actions.png" alt="Comparison 1" width="100%">
-              </div>
-              <div class="column is-one-quarter">
-                <img src="./static/results/comparison_2_0.02s_acc_actions.png" alt="Comparison 2" width="100%">
-              </div>
-              <div class="column is-one-quarter">
-                <img src="./static/results/comparison_3_0.02s_acc_actions.png" alt="Comparison 3" width="100%">
-              </div>
-              <div class="column is-one-quarter">
-                <img src="./static/results/comparison_4_0.02s_acc_actions.png" alt="Comparison 4" width="100%">
-              </div>
-              <div class="column is-one-quarter">
-                <img src="./static/results/comparison_7_0.02s_acc_actions.png" alt="Comparison 7" width="100%">
-              </div>
-              <div class="column is-one-quarter">
-                <img src="./static/results/comparison_8_0.02s_acc_actions.png" alt="Comparison 8" width="100%">
-              </div>
-              <div class="column is-one-quarter">
-                <img src="./static/results/comparison_9_0.02s_acc_actions.png" alt="Comparison 9" width="100%">
-              </div>
+            <div class="content has-text-justified">
+              <p>
+                Qualitative results on complex trajectories with sharp turns and rectangular paths. AutoOdom (orange) shows superior alignment with the ground truth (blue) compared to the baseline (green).
+              </p>
             </div>
           </div>
         </div>
 
+        <div class="container" style="margin-top: 3em;">
+          <h3 class="title is-4 has-text-centered">Ablation Study (Stage 1)</h3>
+          <table class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth">
+            <thead>
+              <tr>
+                <th>$\Delta t$</th>
+                <th>Accel ($a_t$)</th>
+                <th>Pos ($p_t$)</th>
+                <th>Action ($A_t$)</th>
+                <th>$ATE_o$</th>
+                <th>$ATE_u$</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>0.02</td>
+                <td>✓</td>
+                <td>✓</td>
+                <td>✓</td>
+                <td>1.4486</td>
+                <td>0.6577</td>
+              </tr>
+              <tr style="font-weight: bold;">
+                <td>0.02</td>
+                <td>X</td>
+                <td>✓</td>
+                <td>✓</td>
+                <td>0.8176</td>
+                <td>0.2165</td>
+              </tr>
+              <tr>
+                <td>0.02</td>
+                <td>✓</td>
+                <td>✓</td>
+                <td>X</td>
+                <td>1.9190</td>
+                <td>0.6739</td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="content has-text-justified">
+            <p>
+              Ablation studies reveal critical insights: excluding IMU acceleration during Stage 1 pre-training improves performance, while action history proves essential for accurate state estimation. These findings validated our systematic design choices for robust proprioceptive odometry. 
+            </p>
+          </div>
+        </div>
+
+        <div class="columns is-centered" style="margin-top: 2em;">
+          <div class="column is-10">
+            <h3 class="title is-5 has-text-centered">Detailed Comparisons</h3>
+            <div class="columns is-multiline">
+              <div class="column is-one-quarter"><img src="./static/results/comparison_0_0.02s_acc_actions.png" width="100%"></div>
+              <div class="column is-one-quarter"><img src="./static/results/comparison_1_0.02s_acc_actions.png" width="100%"></div>
+              <div class="column is-one-quarter"><img src="./static/results/comparison_2_0.02s_acc_actions.png" width="100%"></div>
+              <div class="column is-one-quarter"><img src="./static/results/comparison_3_0.02s_acc_actions.png" width="100%"></div>
+              <div class="column is-one-quarter"><img src="./static/results/comparison_4_0.02s_acc_actions.png" width="100%"></div>
+              <div class="column is-one-quarter"><img src="./static/results/comparison_7_0.02s_acc_actions.png" width="100%"></div>
+              <div class="column is-one-quarter"><img src="./static/results/comparison_8_0.02s_acc_actions.png" width="100%"></div>
+              <div class="column is-one-quarter"><img src="./static/results/comparison_9_0.02s_acc_actions.png" width="100%"></div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-
   </div>
 </section>
-
 
 <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
@@ -262,28 +294,14 @@
   </div>
 </section>
 
-
 <footer class="footer">
   <div class="container">
-    <div class="content has-text-centered">
-      <a class="icon-link" href="#">
-        <i class="fas fa-file-pdf"></i>
-      </a>
-      <a class="icon-link" href="#" class="external-link" disabled>
-        <i class="fab fa-github"></i>
-      </a>
-    </div>
     <div class="columns is-centered">
       <div class="column is-8">
-        <div class="content">
+        <div class="content has-text-centered">
           <p>
-            This website is licensed under a <a rel="license"
-                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
-            Commons Attribution-ShareAlike 4.0 International License</a>.
-          </p>
-          <p>
-            This website template is borrowed from <a
-              href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>.
+            This website is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+            Website template borrowed from <a href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>.
           </p>
         </div>
       </div>
